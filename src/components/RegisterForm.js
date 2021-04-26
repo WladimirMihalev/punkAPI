@@ -87,12 +87,7 @@ class RegisterForm extends React.Component {
         errors["date"] = "*Please enter your birthday date.";
       }
 
-      if (typeof fields["date"] !== "undefined") {
-        if (!fields["date"].match(/^[0-9]{10}$/)) {
-          formIsValid = false;
-          errors["date"] = "*Please enter valid date";
-        }
-      }
+    
 
       if (!fields["password"]) {
         formIsValid = false;
