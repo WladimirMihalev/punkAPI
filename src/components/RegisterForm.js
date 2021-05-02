@@ -1,6 +1,5 @@
 import React from 'react';
 import './RegisterStyle.css';
-import './Validation/ValidationText.js';
 import validationTextList from './Validation/ValidationText.js';
 
 
