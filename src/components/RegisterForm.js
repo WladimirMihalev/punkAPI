@@ -1,5 +1,7 @@
 import React from 'react';
 import './RegisterStyle.css';
+import './Validation/ValidationText.js';
+import validationTextList from './Validation/ValidationText.js';
 
 
 class RegisterForm extends React.Component {
@@ -47,57 +49,56 @@ class RegisterForm extends React.Component {
 
       if (!fields["name"]) {
         formIsValid = false;
-        errors["name"] = "*Please enter your name.";
+        errors["name"] =  validationTextList.emptyName;
       }
 
       if (typeof fields["name"] !== "undefined") {
         if (!fields["name"].match(/^[a-zA-Z ]*$/)) {
           formIsValid = false;
-          errors["name"] = "*Please enter alphabet characters only.";
+          errors["name"] = validationTextList.incorrectSymbUsed;
         }
       }
 
       if (!fields["surname"]) {
         formIsValid = false;
-        errors["surname"] = "*Please enter your surname.";
+        errors["surname"] = validationTextList.emptySurname;
       }
 
       if (typeof fields["surname"] !== "undefined") {
         if (!fields["surname"].match(/^[a-zA-Z ]*$/)) {
           formIsValid = false;
-          errors["surname"] = "*Please enter alphabet characters only.";
+          errors["surname"] = validationTextList.incorrectSymbUsed ;
         }
       }
 
       if (!fields["emailid"]) {
         formIsValid = false;
-        errors["emailid"] = "*Please enter your email-ID.";
+        errors["emailid"] = validationTextList.emptyEmail;
       }
 
       if (typeof fields["emailid"] !== "undefined") {
         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
         if (!pattern.test(fields["emailid"])) {
           formIsValid = false;
-          errors["emailid"] = "*Please enter valid email-ID.";
+          errors["emailid"] = validationTextList.notValidSymbEmail;
         }
       }
 
       if (!fields["date"]) {
         formIsValid = false;
-        errors["date"] = "*Please enter your birthday date.";
+        errors["date"] = validationTextList.birthdayEmptyDate;
       }
-
-    
+ 
 
       if (!fields["password"]) {
         formIsValid = false;
-        errors["password"] = "*Please enter your password.";
+        errors["password"] = validationTextList.emptyPassword;
       }
 
       if (typeof fields["password"] !== "undefined") {
         if (!fields["password"].match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/)) {
           formIsValid = false;
-          errors["password"] = "*Please enter secure and strong password.";
+          errors["password"] = validationTextList.weakPassword;
         }
       }
 
@@ -143,5 +144,5 @@ class RegisterForm extends React.Component {
 
 }
 
-
 export default RegisterForm;
+
