@@ -1,7 +1,3 @@
-import React from 'react';
-import './RegisterStyle.css';
-import validationTextList from './ValidationText.js';
-
 
 class RegisterForm extends React.Component {
     constructor() {
@@ -16,16 +12,16 @@ class RegisterForm extends React.Component {
 
     };
 
-    handleChange(e) {
+    handleChange({target}) {
       let fields = this.state.fields;
-      fields[e.target.name] = e.target.value;
+      fields[target.name] = target.value;
       this.setState({
         fields
       });
 
     }
 
-    submituserRegistrationForm(e) {
+    submituserRegistrationForm({e}) {
       e.preventDefault();
       if (this.validateForm()) {
           let fields = {};
@@ -142,5 +138,3 @@ class RegisterForm extends React.Component {
 
 
 }
-
-export default RegisterForm;
