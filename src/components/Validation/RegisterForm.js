@@ -1,6 +1,6 @@
 import React from 'react';
 import './RegisterStyle.css';
-import validationTextList from './Validation/ValidationText.js';
+import validationTextList from './ValidationText.js';
 
 
 class RegisterForm extends React.Component {
