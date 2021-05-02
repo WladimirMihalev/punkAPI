@@ -1,8 +1,8 @@
  
 import React, { useState } from 'react';
 import './App.css';
-import BeerList from './components/BeerList.js';
-import Modal from './components/Modal.js';
+import BeerList from './components/List/BeerList.js';
+import Modal from './components/Modal/Modal.js';
  
 
 function App() {
