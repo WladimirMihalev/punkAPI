@@ -1,5 +1,6 @@
 import React, {Component} from  "react";
-import "./BeerList.css"
+import "./BeerList.css";
+import URL from '../API_URL/API_URL.js';
 
  
 
@@ -15,7 +16,7 @@ export default class BeerList extends Component {
     }
 
     componentDidMount(){
-        fetch("https://api.punkapi.com/v2/beers")
+        fetch(URL.API)
         .then(res=> res.json())
         .then(
             (result)=> {
